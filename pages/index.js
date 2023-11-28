@@ -21,7 +21,7 @@ export default function Index(){
 
         <title>Agro Trade</title>
     </Head>
-    <main className="bg-home w-full h-screen flex flex-col justify-end md:grid-cols-4 lg:grid-cols-6">
+    <main className="bg-home w-full h-screen flex flex-col justify-end md:grid-cols-2">
     {/* bottom content */}
       
     <div className="flex flex-col justify-end gap-6 h-[40%] bg-gradient-to-b from-green-400/60 to-green-900 p-3 pb-12" >
