@@ -10,7 +10,7 @@ const montserrat_500 = Montserrat({
 export default function NavBar(){
     return (
         <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            <nav className="h-[58px] flex items-center px-20">
+            <nav className="h-[58px] flex items-center md:h-[58px] flex items-center px-20">
                 {/* desktop navbar */}
                 <div className="w-full flex flex-row justify-between items-center">
                     <ul className="flex flex-row items-center gap-12">
