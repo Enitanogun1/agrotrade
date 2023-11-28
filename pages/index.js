@@ -13,18 +13,16 @@ const nunito = Nunito({
 
 export default function Index(){
 
-
-
- return (
+return (
   <>
     <Head>
 
         <title>Agro Trade</title>
     </Head>
-    <main className="bg-home w-full h-screen flex flex-col justify-end md:grid-cols-4 lg:grid-cols-6">
-    {/* bottom content */}
-      
-    <div className="flex flex-col justify-end gap-6 h-[40%] bg-gradient-to-b from-green-400/60 to-green-900 p-3 pb-12" >
+    <main className="bg-home w-full h-screen flex flex-col  md:flex-cols-1 justify-end ">
+       {/* bottom content */}
+    <div className="flex flex-col justify-end gap-6 h-[40%] p-3 pb-12" style={{ background: 'linear-gradient(to bottom, rgba(0,128, 0, 0), rgba(0, 128,0,1))'}}
+    >
         <div className= {styles.block}> 
           <h1 className = {`${ nunitoBold.className} text-5xl`}>
             <span className="text-white">Agro</span>
