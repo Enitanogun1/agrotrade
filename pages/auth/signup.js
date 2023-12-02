@@ -1,19 +1,32 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "@/config/globals";
 import Head from "next/head";
 import Image from "next/image";
 import { TextField, } from "@mui/material";
 import { FcGoogle, } from 'react-icons/fc';
 import { FaApple, } from 'react-icons/fa';
-
+import { useFormik } from "formik";
+import { signIn} from 'next-auth/react';
+import { useSession } from "next-auth/react";
 
 export default function Signup () {
    const[tab,setTab] = useState('buyer'); 
-    
+   const {accountType,setAccountType} = useContext(AppContext);
+   const {data:session} = useSession();
+   //console.log(session);
+
+   const {handleBlur,handleChange, handleSubmit,touched,errors} = useFormik({
+    initialValues:{},
+    onSubmit: () => {},
+    validationSchema:null,
+});
+
     
     return (
 
         <><Head>
-            <title>Signup | AbroTrade</title>
+            <link rel="icon" href="/AGROTRADE.png"/>
+            <title>Signup | AgroTrade</title>
         </Head>
         <main className="h-screen flex flex-col justify-center items-center py-20 px-3 md:px-0">
             <div className=" md:w-[420px] flex flex-col g-3 border border-gray-300 rounded-md p-3">
@@ -70,7 +83,9 @@ export default function Signup () {
   
                 {/* social sigup */}
                 <div className="flex flex-col gap-3">
-                    <button className="h-[48px] flex justify-center items-center border border-slate-400 rounded-md text-slate-900">
+                    <button 
+                    onClick={() => signIn('google')}
+                    className="h-[48px] flex justify-center items-center border border-slate-400 rounded-md text-slate-900">
                          <FcGoogle className="text-3xl mr-2"/> Sign up with Google</button>
                 
                     <button className="h-[48px] flex justify-center items-center border border-slate-400 rounded-md text-slate-900">
